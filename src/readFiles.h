@@ -9,6 +9,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
 #include "Position.h" //Vertices
 #include "Street.h" //Edges
 #include "Graph.h"

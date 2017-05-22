@@ -16,18 +16,20 @@ using namespace std;
 
 int main() {
 	Graph<Position, Street> g;
-	GraphViewer * gv;
 
-	gv = new GraphViewer(600, 600, false);
-	gv->createWindow(700, 700);
+    GraphViewer *gv = new GraphViewer(600, 600, false);
 
-	gv->defineEdgeColor("blue");
-	gv->defineVertexColor("yellow");
-	gv->defineEdgeCurved(false);
+    gv->setBackground("background.jpg");
 
+    gv->createWindow(600, 600);
+
+    gv->defineEdgeDashed(false);
+    gv->defineVertexColor("blue");
+    gv->defineEdgeColor("black");
+    gv->defineVertexSize(1);
+    gv->defineEdgeCurved(false);
 
 	readPositions(g, gv);
-	system("pause");
 	readEdges(g, gv);
 
 	gv->rearrange();

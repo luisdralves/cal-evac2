@@ -151,6 +151,13 @@ public:
 	bool setVertexLabel(int id, string label);
 
 	/**
+	 * Função que apaga o texto de um nó, caso o mesmo tenha sido definido anteriormente.
+	 *
+	 * @param id Identificador único do nó com o texto a apagar.
+	 */
+	bool clearVertexLabel(int id);
+
+	/**
 	 * Função que define o texto de uma aresta.
 	 * Exemplo, para um apontador gv onde foi instanciada a classe GraphViewer:
 	 * gv->setEdgeLabel(0, "Isto é uma aresta"); adiciona o texto "Isto é uma aresta" à aresta com ID 0
@@ -161,6 +168,13 @@ public:
 	bool setEdgeLabel(int id, string label);
 
 	/**
+	 * Função que apaga o texto de uma aresta, caso o mesmo tenha sido definido anteriormente.
+	 *
+	 * @param id Identificador único da aresta com o texto a apagar.
+	 */
+	bool clearEdgeLabel(int id);
+
+	/**
 	 * Função que define a cor de uma aresta.
 	 * Exemplo, para um apontador gv onde foi instanciada a classe GraphViewer:
 	 * gv->setEdgeColor(0, BLUE); modifica a cor da aresta com ID 0 para azul
@@ -169,6 +183,13 @@ public:
 	 * @param color Nova cor da aresta, utilizar as constantes definidas no graphviewer.h para conveniência.
 	 */
 	bool setEdgeColor(int id, string color);
+
+	/**
+	 * Função que apaga a cor de uma aresta, caso tenha sido definida.
+	 *
+	 * @param id Identificador único da aresta com a cor a apagar.
+	 */
+	bool clearEdgeColor(int id);
 
 	/**
 	 * Função que define se uma aresta é desenhada, ou não, a tracejado.
@@ -191,6 +212,13 @@ public:
 	bool setVertexColor(int id, string color);
 
 	/**
+	 * Função que apaga a cor de um vértice, colocando-a com o valor por omissão.
+	 *
+	 * @param id Identificador único do nó com a cor a apagar.
+	 */
+	bool clearVertexColor(int id);
+
+	/**
 	 * Função que define o tamanho de um nó.
 	 * Exemplo, para um apontador gv onde foi instanciada a classe GraphViewer:
 	 * gv->setVertexSize(0, 10); modifica o tamanho do nó com ID 0 para 40
@@ -209,6 +237,13 @@ public:
 	 * @param filepath Caminho do ficheiro a utilizar como novo ícone do nó.
 	 */
 	bool setVertexIcon(int id, string filepath);
+
+	/**
+	 * Função que apaga o ícone de um nó, caso tenha sido definido.
+	 *
+	 * @param id Identificador único do nó com o ícone a apagar.
+	 */
+	bool clearVertexIcon(int id);
 
 	/**
 	 * Função que define a espessura de uma aresta.
@@ -262,6 +297,11 @@ public:
 	bool defineEdgeColor(string color);
 
 	/**
+	 * Função que restaura a cor global das arestas.
+	 */
+	bool resetEdgeColor();
+
+	/**
 	 * Função que define globalmente se as arestas são desenhadas, ou não, a tracejado.
 	 * Exemplo, para um apontador gv onde foi instanciada a classe GraphViewer:
 	 * gv->defineEdgeDashed(true); faz com que por defeito as arestas sejam desenhadas a tracejado
@@ -280,6 +320,11 @@ public:
 	bool defineVertexColor(string color);
 
 	/**
+	 * Função que restaura a cor global dos nós.
+	 */
+	bool resetVertexColor();
+
+	/**
 	 * Função que define o tamanho global dos nós.
 	 * Exemplo, para um apontador gv onde foi instanciada a classe GraphViewer:
 	 * gv->defineVertexSize(20); modifica o tamanho por defeito dos nós para 20
@@ -289,7 +334,7 @@ public:
 	bool defineVertexSize(int size);
 
 	/**
-	 * Função que define um ícone para um nó.
+	 * Função que define um ícone global para os nós.
 	 * Exemplo, para um apontador gv onde foi instanciada a classe GraphViewer:
 	 * gv->defineVertexIcon("icon.gif"); faz com que por defeito os nós, quando desenhados,
 	 * não sejam um círculo, mas sim a imagem icon.gif
@@ -297,6 +342,11 @@ public:
 	 * @param filepath Caminho do ficheiro a utilizar como novo ícone do nó.
 	 */
 	bool defineVertexIcon(string filepath);
+
+	/**
+	 * Função que apaga o ícone global para os nós.
+	 */
+	bool resetVertexIcon();
 
 	/**
 	 * Função que altera a imagem de fundo do grafo.
@@ -307,6 +357,11 @@ public:
 	 * @param path Caminho para o ficheiro com a imagem.
 	 */
 	bool setBackground(string path);
+
+	/**
+	 * Apaga a imagem de fundo do grafo, se tiver sido previamente definida.
+	 */
+	bool clearBackground();
 
 	/**
 	 * Função que actualiza a visualização do grafo.

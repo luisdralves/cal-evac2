@@ -136,6 +136,13 @@ bool GraphViewer::setEdgeLabel(int k, string label) {
 	return con->sendMsg(str);
 }
 
+bool GraphViewer::clearEdgeLabel(int id) {
+	char buff[200];
+	sprintf(buff, "clearEdgeLabel %d\n", id);
+	string str(buff);
+	return con->sendMsg(str);
+}
+
 bool GraphViewer::setVertexLabel(int k, string label) {
 	char buff[200];
 	sprintf(buff, "setVertexLabel %d %s\n", k, label.c_str());
@@ -143,9 +150,23 @@ bool GraphViewer::setVertexLabel(int k, string label) {
 	return con->sendMsg(str);
 }
 
+bool GraphViewer::clearVertexLabel(int id) {
+	char buff[200];
+	sprintf(buff, "clearVertexLabel %d\n", id);
+	string str(buff);
+	return con->sendMsg(str);
+}
+
 bool GraphViewer::defineEdgeColor(string color) {
 	char buff[200];
 	sprintf(buff, "defineEdgeColor %s\n", color.c_str());
+	string str(buff);
+	return con->sendMsg(str);
+}
+
+bool GraphViewer::resetEdgeColor() {
+	char buff[200];
+	sprintf(buff, "resetEdgeColor\n");
 	string str(buff);
 	return con->sendMsg(str);
 }
@@ -167,6 +188,13 @@ bool GraphViewer::removeEdge(int id) {
 bool GraphViewer::setEdgeColor(int k, string color) {
 	char buff[200];
 	sprintf(buff, "setEdgeColor %d %s\n", k, color.c_str());
+	string str(buff);
+	return con->sendMsg(str);
+}
+
+bool GraphViewer::clearEdgeColor(int id) {
+	char buff[200];
+	sprintf(buff, "clearEdgeColor %d\n", id);
 	string str(buff);
 	return con->sendMsg(str);
 }
@@ -206,9 +234,23 @@ bool GraphViewer::defineVertexColor(string color) {
 	return con->sendMsg(str);
 }
 
+bool GraphViewer::resetVertexColor() {
+	char buff[200];
+	sprintf(buff, "resetVertexColor\n");
+	string str(buff);
+	return con->sendMsg(str);
+}
+
 bool GraphViewer::setVertexColor(int k, string color) {
 	char buff[200];
 	sprintf(buff, "setVertexColor %d %s\n", k, color.c_str());
+	string str(buff);
+	return con->sendMsg(str);
+}
+
+bool GraphViewer::clearVertexColor(int id) {
+	char buff[200];
+	sprintf(buff, "clearVertexColor %d\n", id);
 	string str(buff);
 	return con->sendMsg(str);
 }
@@ -220,9 +262,23 @@ bool GraphViewer::defineVertexIcon(string filepath) {
 	return con->sendMsg(str);
 }
 
+bool GraphViewer::resetVertexIcon() {
+	char buff[200];
+	sprintf(buff, "resetVertexIcon\n");
+	string str(buff);
+	return con->sendMsg(str);
+}
+
 bool GraphViewer::setVertexIcon(int k, string filepath) {
 	char buff[200];
 	sprintf(buff, "setVertexIcon %d %s\n", k, filepath.c_str());
+	string str(buff);
+	return con->sendMsg(str);
+}
+
+bool GraphViewer::clearVertexIcon(int id) {
+	char buff[200];
+	sprintf(buff, "clearVertexIcon %d\n", id);
 	string str(buff);
 	return con->sendMsg(str);
 }
@@ -244,6 +300,13 @@ bool GraphViewer::setVertexSize(int k, int size) {
 bool GraphViewer::setBackground(string path) {
 	char buff[200];
 	sprintf(buff, "setBackground %s\n", path.c_str());
+	string str(buff);
+	return con->sendMsg(str);
+}
+
+bool GraphViewer::clearBackground() {
+	char buff[200];
+	sprintf(buff, "clearBackground\n");
 	string str(buff);
 	return con->sendMsg(str);
 }

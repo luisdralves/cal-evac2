@@ -59,15 +59,16 @@ void readPositions(Graph<Position, Street> & g, GraphViewer *gv) {
 		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> lat_deg;
 		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> lon_deg;
+		linestream >> lon_deg;/*
 		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> lon_rad;
 		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> lat_rad;
+		linestream >> lat_rad;*/
 		Position n(idNo, lat_deg, lon_deg, lat_rad, lon_rad);
 		g.addVertex(n);
-		gv->addNode(idNo, 60000 - (((lon_deg)-(long)(lon_deg)) * -100000),
-				17000 - (((lat_deg)-(long)(lat_deg)) * 100000));
+		/*gv->addNode(idNo, 60000 - (((lon_deg)-(long)(lon_deg)) * -100000),
+				17000 - (((lat_deg)-(long)(lat_deg)) * 100000));*/
+		gv->addNode(idNo, lon_deg, lat_deg);
 		gv->rearrange();
 	}
 
@@ -90,8 +91,8 @@ void readEdges(Graph<Position, Street> & g, GraphViewer *gv) {
 
 
 	string line;
-	unsigned long streetID;
-	unsigned long position1ID, position2ID;
+	unsigned long long streetID;
+	unsigned long long position1ID, position2ID;
 
 	while (getline(inFile, line)) {
 		stringstream linestream(line);
@@ -106,6 +107,7 @@ void readEdges(Graph<Position, Street> & g, GraphViewer *gv) {
 		linestream >> position2ID;
 
 		float weight = calcWeight(findNode(g, position1ID), findNode(g, position2ID));
+
 
 		gv->addEdge(streetID, position1ID, position2ID, EdgeType::UNDIRECTED);
 		Street r = readStreets(streetID, gv);

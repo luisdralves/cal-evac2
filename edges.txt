@@ -1,8 +1,9 @@
-1;a;False
-2;s;False
-3;d;False
-4;a;False
-5;e;False
-6;;False
-7;;False
-8;;False
+0;rua no. 0;false
+1;rua no. 1;false
+2;rua no. 2;true
+3;rua no. 3;false
+4;rua no. 4;false
+5;rua no. 5;false
+6;rua no. 6;true
+7;rua no. 7;false
+8;rua no. 8;true
