@@ -27,10 +27,10 @@ int main() {
 
 
 	readPositions(g, gv);
+	system("pause");
 	readEdges(g, gv);
 
 	gv->rearrange();
 
-	system("pause");
 	return 0;
 }
