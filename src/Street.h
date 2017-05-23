@@ -14,6 +14,7 @@ class Street {
 	bool two_way;
 	bool acessible;
 public:
+	~Street() {};
 	Street(unsigned long ID, string name, bool two_way);
 	unsigned long getID() const;
 	bool is_two_way() const;

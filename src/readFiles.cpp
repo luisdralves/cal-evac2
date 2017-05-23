@@ -1,8 +1,4 @@
 #include "readFiles.h"
-#include "Position.h"
-#include "Street.h"
-#include "Graph.h"
-#include "graphViewer.h"
 
 using namespace std;
 
@@ -69,7 +65,6 @@ void readPositions(Graph<Position, Street> & g, GraphViewer *gv) {
 		/*gv->addNode(idNo, 60000 - (((lon_deg)-(long)(lon_deg)) * -100000),
 				17000 - (((lat_deg)-(long)(lat_deg)) * 100000));*/
 		gv->addNode(idNo, lon_deg, lat_deg);
-		gv->rearrange();
 	}
 
 	inFile.close();
@@ -79,7 +74,7 @@ void readPositions(Graph<Position, Street> & g, GraphViewer *gv) {
 /**
 * Reads the edges from a file and loads them into the graph
 */
-void readEdges(Graph<Position, Street> & g, GraphViewer *gv) {
+void readEdges(Graph<Position, Street> & g, GraphViewer *gv, set<string> & streets) {
 	ifstream inFile;
 
 	inFile.open("graph.txt");
@@ -94,38 +89,44 @@ void readEdges(Graph<Position, Street> & g, GraphViewer *gv) {
 	unsigned long long streetID;
 	unsigned long long position1ID, position2ID;
 
+
 	while (getline(inFile, line)) {
-		stringstream linestream(line);
-		string data;
-		string two_way;
+        stringstream linestream(line);
+        string data;
+        string two_way;
 
-		linestream >> streetID;
+        linestream >> streetID;
 
-		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> position1ID;
-		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> position2ID;
+        getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+        linestream >> position1ID;
+        getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+        linestream >> position2ID;
 
-		float weight = calcWeight(findNode(g, position1ID), findNode(g, position2ID));
+        float weight = calcWeight(findNode(g, position1ID), findNode(g, position2ID));
+
+        Street *r = readStreets(streetID, gv);
+        if (r->is_two_way()) {
+            g.addEdge1(findNode(g, position2ID), findNode(g, position1ID), weight, *r);
+            gv->addEdge(streetID, position1ID, position2ID, EdgeType::UNDIRECTED);
+        }
+        else
+            gv->addEdge(streetID, position1ID, position2ID, EdgeType::DIRECTED);
+
+        g.addEdge1(findNode(g, position1ID), findNode(g, position2ID), weight, *r);
+        gv->setEdgeLabel(streetID, r->getName());
+
+        streets.insert(r->getName());
+    }
 
 
-		gv->addEdge(streetID, position1ID, position2ID, EdgeType::UNDIRECTED);
-		Street r = readStreets(streetID, gv);
-		if (r.is_two_way())
-			g.addEdge1(findNode(g, position2ID), findNode(g, position1ID), weight, r);
-
-		g.addEdge1(findNode(g, position1ID), findNode(g, position2ID), weight, r);
-
-	}
-
-	inFile.close();
+    inFile.close();
 
 }
 
 /**
 * Finds the info of a road, through the ID of the road
 */
-Street readStreets(unsigned long streetID, GraphViewer *gv) {
+Street* readStreets(unsigned long streetID, GraphViewer *gv) {
 	ifstream inFile;
 
 	inFile.open("edges.txt");
@@ -154,12 +155,11 @@ Street readStreets(unsigned long streetID, GraphViewer *gv) {
 
 		if (idNo == streetID) {
 			if (two_way == "False") {
-				Street r(idNo, name, false);
-				return r;
+				return new Street(idNo, name, false);
+
 			}
 			else {
-				Street r(idNo, name, true);
-				return r;
+				return new Street(idNo, name, true);
 			}
 		}
 	}
