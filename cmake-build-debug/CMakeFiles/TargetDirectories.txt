@@ -1,0 +1,3 @@
+C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/CMakeFiles/CAL_URGENCIAS.dir
+C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

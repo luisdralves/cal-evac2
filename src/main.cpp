@@ -66,9 +66,11 @@ int main() {
 
             case 3:
                 if (filesRead && coordsOK) {
-                    /*
-                     * ?????
-                     */
+                    Position  p1(id1,0,0);
+                    Position  p2(id2,0,0);
+                    vector<Position> path = g.getPath(p1, p2);
+                    for(int i = 0; i < path.size(); i++)
+                        cout << path[i].getId() << " -> " << path[i].getLatDeg() << ", " << path[i].getLonDeg() << endl;
                 }
                 else
                     cout << "Must read files and specify position!\n";
@@ -99,8 +101,10 @@ int getExaIntersection(set<pair<Street, pair<int, int>>> streets) {
     cout << "Please insert starting position\nStreet 1: ";
     cin.ignore(1000, '\n');
     getline(cin, street1str);
+    street1str = exactStreet(streets, street1str);
     cout << "Street 2: ";
     getline(cin, street2str);
+    street2str = exactStreet(streets, street2str);
     Street * st1 = new Street(0, street1str, true);
     Street * st2 = new Street(0, street2str, true);
     return st1->getIntersection(*st2, streets);

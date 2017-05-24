@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CAL_URGENCIAS"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CAL_URGENCIAS">
+				<Option output="C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/CAL_URGENCIAS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++/backward"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include-fixed"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 CAL_URGENCIAS"/>
+					<CompileFile command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CAL_URGENCIAS/fast">
+				<Option output="C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/CAL_URGENCIAS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include/c++/backward"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/include-fixed"/>
+					<Add directory="C:/Programs/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/6.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 CAL_URGENCIAS/fast"/>
+					<CompileFile command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Programs/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/up201405868/Desktop/cal-evac2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Date.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Date.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Graph.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Matcher.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Matcher.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Position.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Position.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Street.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/Street.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/connection.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/connection.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/edgetype.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/graphviewer.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/graphviewer.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/main.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/main.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/menus.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/menus.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/readFiles.cpp">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/src/readFiles.h">
+			<Option target="CAL_URGENCIAS"/>
+		</Unit>
+		<Unit filename="C:/Users/up201405868/Desktop/cal-evac2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

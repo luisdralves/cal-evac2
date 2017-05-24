@@ -1,0 +1,54 @@
+0;Avenida de Fernao Magalhaes;True
+1;Avenida de Fernao Magalhaes;True
+2;Avenida de Fernao Magalhaes;True
+3;Avenida de Fernao Magalhaes;True
+4;Avenida de Fernao Magalhaes;True
+5;Avenida de Fernao Magalhaes;True
+6;Avenida de Fernao Magalhaes;True
+7;Avenida de Fernao Magalhaes;True
+8;Rua de Luis Woodhouse;true
+9;Rua da Constituicao;True
+10;Rua da Constituicao;True
+11;Rua da Constituicao;True
+12;Avenida de Santa Marinha;True
+13;Avenida de Santa Marinha;True
+14;Avenida de Santa Marinha;True
+15;Avenida de Santa Marinha;True
+16;Avenida de Santa Marinha;True
+17;Avenida de Santa Marinha;True
+18;Avenida dos Aliados;False
+19;Avenida dos Aliados;False
+20;Avenida dos Aliados;False
+21;Avenida dos Aliados;False
+22;Avenida dos Aliados;True
+23;Avenida dos Aliados;True
+24;Avenida dos Combatentes;True
+25;Avenida dos Combatentes;True
+26;Avenida dos Combatentes;True
+27;Avenida dos Combatentes;True
+28;Avenida Marginal ao Rio;True
+29;Avenida Marginal ao Rio;True
+30;Avenida Marginal ao Rio;True
+31;Avenida Marginal ao Rio;True
+32;Avenida Marginal ao Rio;True
+33;Avenida Marginal ao Rio;True
+34;Avenida Marginal ao Rio;True
+35;Rua do Marques;True
+36;Rua do Marques;True
+37;Rua do Marques;True
+38;Rua do Marques;True
+39;Rua Laios Vidal;True
+40;Rua Laios Vidal;True
+41;Rua Laios Vidal;True
+42;Rua Laios Vidal;True
+43;Rua Musa Siorus;False
+44;Rua Musa Siorus;False
+45;Rua Musa Siorus;False
+46;Rua Musa Siorus;False
+47;Rua Simao Matias;False
+48;Rua Simao Matias;False
+49;Rua Simao Matias;False
+50;Rua Simao Matias;False
+51;Rua do Bagaco;True
+52;Rua do Bagaco;True
+53;Rua do Bagaco;True
