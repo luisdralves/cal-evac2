@@ -1,21 +1,14 @@
-#pragma once
+//
+// Created by up201405308 on 24/05/2017.
+//
 
-#ifndef DATE_H_
-#define DATE_H_
-#include <iostream>
+#ifndef CAL_URGENCIAS_DATE_H
+#define CAL_URGENCIAS_DATE_H
 
-using namespace std;
 
 class Date {
-	int hour;
-	int min;
-public:
-	Date();
-	Date(int hour, int min);
-	int getHour() const;
-	int getMin() const;
-	bool operator <(const Date d1) const;
-	bool operator ==(const Date d1) const;
+
 };
 
-#endif /* DATE_H_ */
+
+#endif //CAL_URGENCIAS_DATE_H

@@ -5,6 +5,9 @@
 #define  STREET_H_
 
 #include <string>
+#include <set>
+#include "Position.h"
+#include "Graph.h"
 
 using namespace std;
 
@@ -22,6 +25,8 @@ public:
 	void block();
 	bool getState() const;
 	bool operator ==(const Street s1) const;
+	bool operator <(const Street s1) const;
+	int getIntersection(Street s1, set<pair<Street, pair<int, int>>> streets);
 };
 
 

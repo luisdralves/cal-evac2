@@ -11,6 +11,7 @@
 #include <sstream>
 #include <algorithm>
 #include <set>
+#include <cmath>
 #include "Position.h" //Vertices
 #include "Street.h" //Edges
 #include "Graph.h"
@@ -20,8 +21,7 @@ using namespace std;
 
 void readPositions(Graph<Position, Street> & g, GraphViewer *gv);
 Street* readStreets(unsigned long StreetID, GraphViewer *gv);
-void readEdges(Graph<Position, Street> & g, GraphViewer *gv, set<string> & streets);
-Position findPosition(Graph<Position, Street> & g, unsigned long ID);
+void readEdges(Graph<Position, Street> & g, GraphViewer *gv, set<pair<Street, pair<int, int>>> & streets);
 float calcWeight(Position from, Position to);
 
 #endif

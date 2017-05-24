@@ -11,4 +11,4 @@ file(GLOB SOURCE_FILES
 
 link_libraries(ws2_32 wsock32)
 
-add_executable(CAL_URGENCIAS ${SOURCE_FILES} src/Matcher.cpp src/Matcher.h)
+add_executable(CAL_URGENCIAS ${SOURCE_FILES} src/Matcher.cpp src/Matcher.h src/main.h src/Date.cpp src/Date.h)

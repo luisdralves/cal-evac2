@@ -6,16 +6,7 @@ using namespace std;
 * Calculates the distance from a node to another(in km)
 */
 float calcWeight(Position from, Position to) {
-	int r = 6371; // raio da terra em kms
-	float dLat = to.getLatRad() - from.getLatRad();
-	float dLon = to.getLonRad() - from.getLonRad();
-	float a = sin(dLat / 2) * sin(dLat / 2)
-		+ cos(from.getLatRad()) * cos(to.getLatRad()) * sin(dLon / 2)
-		* sin(dLon / 2);
-	float c = 2 * atan2(sqrt(a), sqrt(1 - a));
-	float d = r * c;
-
-	return d;
+	return sqrt(pow((from.getLatDeg() - to.getLatDeg()), 2) + pow((from.getLonDeg() - to.getLonDeg()), 2));
 }
 
 /**
@@ -55,15 +46,9 @@ void readPositions(Graph<Position, Street> & g, GraphViewer *gv) {
 		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> lat_deg;
 		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> lon_deg;/*
-		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> lon_rad;
-		getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> lat_rad;*/
-		Position n(idNo, lat_deg, lon_deg, lat_rad, lon_rad);
+		linestream >> lon_deg;
+		Position n(idNo, lat_deg, lon_deg);
 		g.addVertex(n);
-		/*gv->addNode(idNo, 60000 - (((lon_deg)-(long)(lon_deg)) * -100000),
-				17000 - (((lat_deg)-(long)(lat_deg)) * 100000));*/
 		gv->addNode(idNo, lon_deg, lat_deg);
 	}
 
@@ -74,7 +59,7 @@ void readPositions(Graph<Position, Street> & g, GraphViewer *gv) {
 /**
 * Reads the edges from a file and loads them into the graph
 */
-void readEdges(Graph<Position, Street> & g, GraphViewer *gv, set<string> & streets) {
+void readEdges(Graph<Position, Street> & g, GraphViewer *gv, set<pair<Street, pair<int, int>>> & streets) {
 	ifstream inFile;
 
 	inFile.open("graph.txt");
@@ -115,7 +100,7 @@ void readEdges(Graph<Position, Street> & g, GraphViewer *gv, set<string> & stree
         g.addEdge1(findNode(g, position1ID), findNode(g, position2ID), weight, *r);
         gv->setEdgeLabel(streetID, r->getName());
 
-        streets.insert(r->getName());
+        streets.insert(make_pair(*r, make_pair(position1ID,position2ID)));
     }
 
 

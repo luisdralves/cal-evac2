@@ -1,99 +1,107 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <map>
-#include <sstream>
-#include <stdlib.h>
-#include <ctime>
-#include <set>
-#include "Graph.h"
-#include "Position.h"
-#include "Street.h"
-#include "readFiles.h"
-#include "menus.h"
-
-using namespace std;
+#include "main.h"
 
 int main() {
 	Graph<Position, Street> g;
 
     GraphViewer *gv = new GraphViewer(600, 600, false);
-    gv->setBackground("background.jpg");
-    gv->createWindow(600, 600);
-    gv->defineEdgeDashed(false);
-    gv->defineVertexColor("green");
-    gv->defineEdgeColor("black");
-    gv->defineEdgeCurved(false);
-    gv->rearrange();
 
-    set<string> streets;
+    set<pair<Street, pair<int, int>>> streets;
 
     bool filesRead = false;
-    string street1str, street2str;
+    bool coordsOK = false;
+    int id1 = -1, id2 = 14;
+
+    cout << " _______________Sistema de Evacuacao_____________" << endl;
+    cout << "|                                                |" << endl;
+    cout << "|              _____________[\\_                  |" << endl;
+    cout << "|             /  _|_    .--..--\\                 |" << endl;
+    cout << "|             |)  |     [__][___\\___             |" << endl;
+    cout << "|             |        |   -|-   __ `\\           |" << endl;
+    cout << "|           _(  .----. |    |   /  \\ [)          |" << endl;
+    cout << "|           `\'---\\__/-----------\\__/--\'          |" << endl;
 
 
-    readPositions(g, gv);
-    readEdges(g, gv, streets);
-    for(auto iter=streets.begin(); iter!=streets.end();++iter) {
-        cout << *iter << endl;
-    }
-/*
     int menu = 0;
-    while (menu != 5) {
-        menu = getMenu("Read files,Insert origin and destination,Add accident,Calculate path,Exit");
+    while (menu != 4) {
+        menu = getMenu("Read files,Insert your position,Calculate path,Exit");
         switch (menu) {
             case 1:
+                gv->createWindow(600, 600);
+                gv->defineEdgeDashed(false);
+                gv->defineVertexColor("green");
+                gv->defineEdgeColor("black");
+                gv->defineEdgeCurved(false);
+                gv->rearrange();
                 readPositions(g, gv);
+                gv->setVertexIcon(id2, "hospital.png");
                 readEdges(g, gv, streets);
+                gv->rearrange();
                 filesRead = true;
                 break;
             case 2:
                 if (filesRead) {
-                    cout << "Please insert starting position\nStreet 1:";
-                    cin >> street1str;
-                    cout << "Street 2:";
-                    cin >> street2str;
+                    int submenu = getMenu("Approximate position,Exact position");
+                    switch (submenu) {
+                        case 1:
+                            id1 = getApxIntersection(streets);
+                            if (id1 == -1)
+                                cout << "Those streets never cross, we are expecting an intersection between two streets\n";
+                            break;
+                        case 2:
+                            id1 = getExaIntersection(streets);
+                            if (id1 == -1)
+                                cout << "Unknown location\n";
+                            break;
+                    }
+                    if (id1 != -1) {
+                        coordsOK = true;
+                        gv->setVertexColor(id1, "red");
+                        gv->rearrange();
+                    }
                 }
                 else
-                    cout << "must read files first!\n";
+                    cout << "Must read files first!\n";
                 system("pause");
                 break;
-            case 3:
-                if (filesRead) {
-                    cout << "Por favor insira as coordenadas do acidente\n";
-                    while (accidentLat < miny || accidentLat > maxy || accidentLong < minx || accidentLong > maxx) {
-                        cout << "Introduza a latitude: \n";
-                        cin >> accidentLat;
-                        cout << "Introduza a longitude: \n";
-                        cin >> accidentLong;
-                        system("cls");
-                    }
-                    accident = new Position(accidentLong, accidentLat);
 
-                    if (g.getVertex(*accident) == NULL)
-                        cout << "coordenadas do acidente nao existem\n";
-                    else
-                        g.removeVertex(*accident);
-                }
-                else
-                    cout << "must read files first!\n";
-                system("pause");
-                break;
-            case 4:
+            case 3:
                 if (filesRead && coordsOK) {
-                    g.dijkstraShortestPath(*userO);
-                    while (true) {
-                        cout << g.getVertex(*userD)->path->getInfo().getLatDeg() << ',' << g.getVertex(*userD)->path->getInfo().getLonDeg() << endl;
-                        *userD = g.getVertex(*userD)->path->getInfo();
-                    }
+                    /*
+                     * ?????
+                     */
                 }
                 else
-                    cout << "must read files and add origin and destination first!\n";
+                    cout << "Must read files and specify position!\n";
                 system("pause");
                 break;
         }
     }
-*/
+
 	return 0;
+}
+
+int getApxIntersection(set<pair<Street, pair<int, int>>> streets) {
+    string street1str, street2str;
+    cout << "Please insert starting position\nStreet 1: ";
+    cin.ignore(1000, '\n');
+    getline(cin, street1str);
+    street1str = closestStreet(streets, street1str);
+    cout << "Street 2: ";
+    getline(cin, street2str);
+    street2str = closestStreet(streets, street2str);
+    Street * st1 = new Street(0, street1str, true);
+    Street * st2 = new Street(0, street2str, true);
+    return st1->getIntersection(*st2, streets);
+}
+
+int getExaIntersection(set<pair<Street, pair<int, int>>> streets) {
+    string street1str, street2str;
+    cout << "Please insert starting position\nStreet 1: ";
+    cin.ignore(1000, '\n');
+    getline(cin, street1str);
+    cout << "Street 2: ";
+    getline(cin, street2str);
+    Street * st1 = new Street(0, street1str, true);
+    Street * st2 = new Street(0, street2str, true);
+    return st1->getIntersection(*st2, streets);
 }
