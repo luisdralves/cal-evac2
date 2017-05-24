@@ -102,9 +102,13 @@ int getExaIntersection(set<pair<Street, pair<int, int>>> streets) {
     cin.ignore(1000, '\n');
     getline(cin, street1str);
     street1str = exactStreet(streets, street1str);
+    if(street1str == "Unknown Location")
+        return -1;
     cout << "Street 2: ";
     getline(cin, street2str);
     street2str = exactStreet(streets, street2str);
+    if(street2str == "Unknown Location")
+        return -1;
     Street * st1 = new Street(0, street1str, true);
     Street * st2 = new Street(0, street2str, true);
     return st1->getIntersection(*st2, streets);

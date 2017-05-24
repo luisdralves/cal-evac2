@@ -12,7 +12,8 @@ using namespace std;
 
 size_t levenshtein_distance(string s, string t);
 size_t levenshtein_distance_aux(const char* s, size_t n, const char* t, size_t m);
-
+bool kmp(string pattern, string target);
+string exactStreet(set<pair<Street, pair<int, int>>> streets, string street);
 string closestStreet(set<pair<Street, pair<int, int>>> streets, string street);
 
 #endif
